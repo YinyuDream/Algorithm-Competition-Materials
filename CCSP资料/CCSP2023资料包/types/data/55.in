@@ -1,0 +1,10 @@
+2 3 4
+struct str { u8[1025][1025][1025][1025][1025] a, i128 b };
+union ptr { u128 value, u128* ptr };
+alloc str[1023][1023][1023][1023][1023] e;
+alloc u8[100]* a;
+alloc ptr b;
+write b.value = 0xFFFFB0000A07B5B4D6CF26BE0;
+write *(b.ptr) = 0xFFFFB0000A07B5B4D6CF26BF0;
+read (*a)[6];
+read &(e[114][514][191][981][0].a[233][466][11][45][14]);

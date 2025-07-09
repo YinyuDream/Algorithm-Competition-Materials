@@ -1,0 +1,4 @@
+0 3 0
+alloc a b;
+alloc f8 b;
+alloc u16 b;

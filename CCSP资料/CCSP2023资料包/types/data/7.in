@@ -1,0 +1,6 @@
+5 0 0
+union data { u64 dword, u8[8] bytes };
+struct node;
+union pointer { node* ptr, u128 addr };
+struct neighbors { pointer prev, pointer next };
+struct node { data[2] dat, neighbors nbr };

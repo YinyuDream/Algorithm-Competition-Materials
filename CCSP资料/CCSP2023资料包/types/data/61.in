@@ -1,0 +1,19 @@
+4 4 10
+union f128_t { f128 f, u128 u };
+union f64_t { f64 f, u64 u };
+union f32_t { f32 f, u32 u };
+union f16_t { f16 f, u16 u };
+alloc f16_t f16_i;
+alloc f32_t f32_i;
+alloc f64_t f64_i;
+alloc f128_t f128_i;
+write f128_i.u = 0x7FFFFFFFFFFFDEADBEEFFFFFFFFFFFFF;
+read f128_i.f;
+write f64_i.u = 0xFFE0000000000000;
+read f64_i.f;
+write f64_i.u = 0xFFF8000000000000;
+read f64_i.f;
+write f32_i.f = 0x1.23456p-10;
+read f32_i.u;
+write f16_i.u = 0x3023;
+read f16_i.f;

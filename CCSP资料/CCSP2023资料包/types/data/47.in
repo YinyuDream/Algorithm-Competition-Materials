@@ -1,0 +1,11 @@
+0 5 5
+alloc f16[10][10] a;
+alloc u16[5] b;
+alloc gg c;
+alloc u64* d;
+alloc f128* e;
+write *d = 0x123456789ABCDEF0;
+read &a[0];
+read a[0][2];
+write a[0] = 0x1.2p-1;
+read *e;

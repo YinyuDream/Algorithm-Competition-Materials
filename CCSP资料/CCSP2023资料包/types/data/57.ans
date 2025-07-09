@@ -1,0 +1,15 @@
+i64_ptr 16 16
+i32_ptr 16 16
+u16_ptr 16 16
+u128_ptr 16 16
+u128_u8 16 16
+0x0
+0x3E80
+0x3ED0
+0x3EE0
+0x3EF0
+array[10] at 0x460
+syntax error on line 14
+syntax error on line 15
+1311768467463790320
+syntax error on line 17

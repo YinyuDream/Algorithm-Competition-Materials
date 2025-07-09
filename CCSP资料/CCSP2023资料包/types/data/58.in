@@ -1,0 +1,21 @@
+10 5 5
+struct s5;
+struct s2;
+union u3;
+union u4;
+union u1;
+union u1 { s2 a, u3 b };
+union u4 { i32 a, u1 b, s5 c };
+struct s2 { u3 a, s5 b };
+struct s5 { i32 a, u8 b, i128 c };
+union u3 { u4 a, s5 b };
+alloc u1* a;
+alloc s2[100] b;
+alloc u3 c;
+alloc u4[100]* d;
+alloc s5 e;
+read a;
+read b[1];
+read &(c.a.c.b);
+read (*d)[99].b;
+read &(e.c);

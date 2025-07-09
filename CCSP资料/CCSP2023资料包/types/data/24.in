@@ -1,0 +1,6 @@
+0 5 0
+alloc u32[100] a;
+alloc u8* b;
+alloc f128[3] c;
+alloc u16[2][3][4] d;
+alloc u8*[2]*[3]*[3] e;

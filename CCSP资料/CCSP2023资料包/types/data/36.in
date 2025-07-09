@@ -1,0 +1,15 @@
+0 5 9
+alloc u32 a;
+alloc u8 b;
+alloc u64 c;
+alloc i32 d;
+alloc i8 e;
+read &a;
+read &f;
+write a = 0xDEADBEEF;
+write g = 233;
+read &&*&a;
+read &&*&*a;
+read *&*&a;
+read **&*&*&a;
+write &a = 0123;

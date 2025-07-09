@@ -1,0 +1,11 @@
+0 10 0
+alloc u8 a;
+alloc f128[2]*[10]**[5]* b;
+alloc u8[1024][1024][1024][1024][1024][1024][1024][1024][1024][1023] c;
+alloc f16 d;
+alloc i64 e;
+alloc u32 f;
+alloc u8[133] g;
+alloc u128[233] h;
+alloc u64 i;
+alloc i8 j;

@@ -1,0 +1,12 @@
+0 5 6
+alloc u8[100]* a;
+alloc u128* b;
+alloc u32* c;
+alloc u64 d;
+alloc u128 e;
+write *b = 0x5;
+read a;
+write (*a)[27] = 52;
+write d = 0x3;
+write *c = 0x4;
+read d;

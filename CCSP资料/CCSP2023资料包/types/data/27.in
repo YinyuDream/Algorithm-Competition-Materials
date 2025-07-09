@@ -1,0 +1,5 @@
+0 4 0
+alloc u8 f16;
+alloc u8 f17;
+alloc u8 i32;
+alloc i32 i33;

@@ -1,0 +1,15 @@
+5 3 6
+union data { u64 dword, u8[8] bytes };
+struct node;
+union pointer { node* ptr, u128 addr };
+struct neighbors { pointer prev, pointer next };
+struct node { data[2] dat, neighbors nbr };
+alloc node[2333] node;
+alloc node[10] nodes;
+alloc unknown[114514] 2333;
+read node;
+read 2333;
+write nodes[1].dat[1].dword = 0x123456789ABCDEF0;
+write nodes[5].nbr.prev.addr = 0x30;
+read nodes[1].dat[1].bytes[4];
+read *nodes[5].nbr.prev.ptr.dat[1].bytes[4];

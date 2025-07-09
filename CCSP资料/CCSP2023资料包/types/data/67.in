@@ -1,0 +1,16 @@
+5 5 5
+union f64_ptr { u128 addr, f64* ref };
+union i32_ptr { u128 addr, i32* ref };
+union u16_ptr { u128 addr, u16* ref };
+union f128_ptr { u128 addr, f128* ref };
+union i128_f16 { i128 raw, f16[8] value };
+alloc i128_f16[10][10][10] a;
+alloc i32_ptr[5] b;
+alloc u32 c;
+alloc f64_ptr d;
+alloc f128_ptr e;
+write *(e.ref) = 0x1.23456789ABCDEF0p2333;
+read a[0][7][0][5];
+read a[0][0].value[6];
+write a[2][3][3].raw = -0xFF;
+read *(d.ref);

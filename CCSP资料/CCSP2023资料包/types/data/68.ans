@@ -1,0 +1,15 @@
+s5 32 16
+s2 80 16
+u3 32 16
+u4 32 16
+u1 80 16
+0x0
+0x10
+0x1F50
+0x1F70
+0x1F80
+pointer to 0x0
+s2 at 0x60
+pointer to 0x1F54
+syntax error on line 20
+pointer to 0x1F90

@@ -1,0 +1,9 @@
+0 8 0
+alloc u8 a;
+alloc u128 b;
+alloc u16 c;
+alloc u32 d;
+alloc u64 e;
+alloc u128 f;
+alloc u8 g;
+alloc u32 h;

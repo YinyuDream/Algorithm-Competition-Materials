@@ -1,0 +1,14 @@
+2 4 7
+struct str { f64[1025][1025][1025][1025][1025] dat, i128 len };
+union ptr { u128 value, u128* ptr, f128 asf };
+alloc str[1023][1023][1023][1023][128] e;
+alloc str[1023][1023][1023][1024][127] e;
+alloc str[100]* a;
+alloc ptr b;
+write b.value = 0xFFFF9FF80C0935B4432A10000;
+write *(b.ptr) = 0xFFFF9FF80C0935B4432A10010;
+read (*a)[6];
+read b.asf;
+read &(e[114][514][191][981][0].dat[233][466][11][45][14]);
+read &&(**&(a))[4];
+read &(e[114][514][191][981][0].dat[233][466][699][932][116]);

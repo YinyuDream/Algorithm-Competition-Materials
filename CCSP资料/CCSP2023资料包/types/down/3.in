@@ -1,0 +1,5 @@
+4 0 0
+struct a;
+struct b { a _a };
+struct c;
+struct a { b _b };

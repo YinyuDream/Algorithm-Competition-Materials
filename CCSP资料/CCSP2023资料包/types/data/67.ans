@@ -1,0 +1,13 @@
+f64_ptr 16 16
+i32_ptr 16 16
+u16_ptr 16 16
+f128_ptr 16 16
+i128_f16 16 16
+0x0
+0x3E80
+0x3ED0
+0x3EE0
+0x3EF0
+syntax error on line 13
+syntax error on line 14
+-0x2p188

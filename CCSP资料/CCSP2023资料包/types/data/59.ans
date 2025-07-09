@@ -1,0 +1,8 @@
+data 8 8
+node 48 16
+pointer 16 16
+neighbors 32 16
+0x0
+syntax error on line 8
+syntax error on line 9
+syntax error on line 19

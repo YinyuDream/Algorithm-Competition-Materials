@@ -1,0 +1,6 @@
+0 5 0
+alloc i32 a;
+alloc i64 b;
+alloc i128 c;
+alloc u128 d;
+alloc f128 e;
