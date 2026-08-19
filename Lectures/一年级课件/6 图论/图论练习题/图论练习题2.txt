@@ -1,0 +1,134 @@
+NOIP2010 模拟试题 试题一： 
+新的开始 
+【题目描述】 
+    发展采矿业当然首先得有矿井， 小 FF 花了上次探险获得的千分之一的财富请人在岛
+上挖了 n 口矿井， 但他似乎忘记考虑的矿井供电问题…… 
+为了保证电力的供应， 小 FF 想到了两种办法： 
+        1、 在这一口矿井上建立一个发电站， 费用为 v（发电站的输出功率可以供给任
+意多个矿井）。 
+        2、 将这口矿井与另外的已经有电力供应的矿井之间建立电网， 费用为 p。 
+    小 FF 希望身为”NewBe_One" 计划首席工程师的你帮他想出一个保证所有矿井电力供
+应的最小花费。 
+【输入格式】 
+      第一行一个整数 n， 表示矿井总数。 
+      第 2～n+1 行，每行一个整数， 第 i 个数v[i]表示在第i 口矿井上建立发电站的费用。  
+      接下来为一个 n*n 的矩阵 P， 其中 p[ i , j ]表示在第i口矿井和第 j口矿井之间建立
+电网的费用（数据保证有 p[ i, j ] = p[ j, i ], 且 p[ i, i ]=0） 。 
+【输出格式】 
+      仅一个整数， 表示让所有矿井获得充足电能的最小花费。 
+【输入样例】 
+     4 
+     5 
+     4 
+
+     4
+     3 
+     0 2 2 2 
+     2 0 3 3 
+     2 3 0 4 
+     2 3 4 0 
+【输出样例】 
+     9 
+输出样例说明： 
+    小 FF 可以选择在4号矿井建立发电站然后把所有矿井都与其建立电网，总花费是                 
+3+2+2+2 = 9。 
+【数据范围】 
+      对于30%的数据：   1<=n<=50; 
+      对于100%的数据：  1<=n<=300;   0<=v[i], p[i,j] <=10^5. 
+ 
+ 
+ AC代碼：
+
+/* 
+Problem:NewStart 
+Author:Yee-fan Zhu 
+Method:Mini Spanning Tree 
+Algorithm:Prim Algorithm 
+Date:Aug,28,2011 21:48 
+*/ 
+#include <iostream>   
+using namespace std;  
+#define MAXN 302 
+#define info 100000000 
+typedef int elemtype; 
+
+int s=0; 
+void prim(int mat[][MAXN],int n)  //普利姆算法求最小生成树 
+{ 
+    elemtype lowcost[MAXN];//表示边(i,closest[i])的权值 
+    int closest[MAXN];//表示U中的一个顶点。 
+    //该顶点和V-U中的一个顶点构成的边(i,closest[i])具有最小的权值 
+    int i,j,k,mini,ret=0; 
+    //int maxi=0; //最长的那个边 
+    bool v[MAXN]; 
+    for (i=0;i<n;i++)  //Initialize 
+    { 
+        lowcost[i]=mat[0][i]; 
+        closest[i]=0; 
+        v[i]=false; 
+    } 
+    v[0] = true; 
+    for (i=0;i<n-1;i++) 
+    { 
+        k=0; 
+        mini=info; 
+        for (j=0;j<n;j++) 
+        { 
+            if (!v[j] && lowcost[j]<mini) 
+            { 
+                mini=lowcost[j]; 
+                k=j; 
+            } 
+        } 
+        v[k]=true; 
+         
+        //if (maxi<lowcost[k]) //为了求最长边的最小值 
+            //maxi=lowcost[k]; 
+        ret+=lowcost[k]; 
+         
+        //cout<<k<<"  "<<closest[k]<<"  "<<lowcost[k]<<endl;//打印边 
+        s+=lowcost[k]; 
+         
+        for (j=0;j<n;j++) 
+        { 
+            if (!v[j] && mat[k][j]<lowcost[j]) 
+            { 
+                lowcost[j]=mat[k][j]; 
+                closest[j]=k; 
+            } 
+        } 
+    } 
+} 
+
+int main()  
+{  
+    freopen("NewStart.in","r",stdin); 
+    freopen("NewStart.out","w",stdout); 
+    int i,j; 
+    int n,k; //n是矿井总数 
+    int mat[MAXN][MAXN];//邻接矩阵 
+     
+    cin>>n; 
+    for (k=1;k<=n;k++) 
+    { 
+        cin>>i; 
+        mat[0][k]=i; 
+        mat[k][0]=i; 
+    } 
+     
+    for (i=1;i<=n;i++) 
+    { 
+        for (j=1;j<=n;j++) 
+        { 
+            cin>>k; 
+            mat[i][j]=k; 
+            mat[j][i]=k; 
+        } 
+    }  
+    prim(mat,n+1); //从0到n,共n+1 
+  
+    cout<<s<<endl; 
+    return 0; 
+}      
+
+

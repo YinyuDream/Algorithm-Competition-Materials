@@ -1,0 +1,31 @@
+# 困难数学题
+
+小歪正在计算数学题：$y=x \operatorname{xor} x \operatorname{xor} x\operatorname{xor} x$ 。多难啊，帮帮小歪吧。
+
+在这里，$\rm xor$ 表示位运算中的按位异或运算。
+
+## 输入描述:
+
+第一行上输入一个整数 $x \left(0\le x \le 500 \right)$ 。
+
+## 输出描述:
+
+第一行上输出一个整数 $y$ 代表方程答案。
+
+## 示例1
+
+### 输入
+
+```
+0
+```
+
+### 输出
+
+```
+0
+```
+
+### 说明
+
+我们都知道，异或运算（ $\operatorname{xor}$ ）的口诀就是”不同出一，相同出零“。所以  $0 \operatorname{xor} 0 \operatorname{xor} 0\operatorname{xor} 0=0$ 。

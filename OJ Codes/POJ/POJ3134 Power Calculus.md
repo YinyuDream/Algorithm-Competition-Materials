@@ -1,0 +1,59 @@
+# Power Calculus
+
+## 题目描述
+
+Starting with x and repeatedly multiplying by x, we can compute x^31 with thirty multiplications:
+
+> x^2 = x × x, x^3 = x^2 × x, x^4 = x^3 × x, …, x^31 = x^30 × x.
+
+The operation of squaring can be appreciably shorten the sequence of multiplications. The following is a way to compute x^31 with eight multiplications:
+
+> x^2 = x × x, x3 = x^2 × x, x6 = x^3 × x^3, x7 = x^6 × x, x^14 = x^7 × x^7, x^15 = x^14 × x, x^30 = x^15 × x^15, x^31 = x^30 × x.
+
+This is not the shortest sequence of multiplications to compute x3^1. There are many ways with only seven multiplications. The following is one of them:
+
+> x^2 = x × x, x^4 = x^2 × x^2, x^8 = x^4 × x^4, x^8 = x^4 × x^4, x^10 = x^8 × x^2, x^20 = x^10 × x^10, x^30 = x^20 × x^10, x^31 = x^30 × x.
+
+If division is also available, we can find a even shorter sequence of operations. It is possible to compute x^31 with six operations (five multiplications and one division):
+
+> x^2 = x × x, x^4 = x^2 × x^2, x^8 = x^4 × x^4, x^16 = x^8 × x^8, x^32 = x^16 × x^16, x^31 = x^32 ÷ x.
+
+This is one of the most efficient ways to compute x^31 if a division is as fast as a multiplication.
+
+Your mission is to write a program to find the least number of operations to compute x^n by multiplication and division starting with x for the given positive integer n. Products and quotients appearing in the sequence should be x to a positive integer’s power. In others words, x^−3, for example, should never appear.
+
+## 输入格式
+
+The input is a sequence of one or more lines each containing a single integer n. n is positive and less than or equal to 1000. The end of the input is indicated by a zero.
+
+## 输出格式
+
+Your program should print the least total number of multiplications and divisions required to compute x^n starting with x for the integer n. The numbers should be written each in a separate line without any superfluous characters such as leading or trailing spaces.
+
+## 样例输入
+
+```
+1
+31
+70
+91
+473
+512
+811
+953
+0
+```
+
+## 样例输出
+
+```
+0
+6
+8
+9
+11
+9
+13
+12
+```
+

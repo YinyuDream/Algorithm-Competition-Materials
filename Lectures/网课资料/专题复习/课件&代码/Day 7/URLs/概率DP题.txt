@@ -1,0 +1,4 @@
+codeforces 258D
+http://codeforces.com/problemset/problem/258/D
+
+数据范围更大，思考一下怎么把课上的方法进一步优化

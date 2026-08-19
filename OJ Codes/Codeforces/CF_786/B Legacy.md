@@ -1,0 +1,61 @@
+# Legacy
+
+Rick and his co-workers have made a new radioactive formula and a lot of bad guys are after them. So Rick wants to give his legacy to Morty before bad guys catch them.
+
+There are $n$ planets in their universe numbered from $1$ to $n$. Rick is in planet number $s$ (the earth) and he doesn't know where Morty is. As we all know, Rick owns a portal gun. With this gun he can open one-way portal from a planet he is in to any other planet (including that planet). But there are limits on this gun because he's still using its free trial.
+
+![Image](https://espresso.codeforces.com/3e33a87e8ba090af9cf4c5a8e27cb131ebefa1c7.png)
+
+By default he can not open any portal by this gun. There are $q$ plans in the website that sells these guns. Every time you purchase a plan you can only use it once but you can purchase it again if you want to use it more.
+
+Plans on the website have three types:
+
+1. With a plan of this type you can open a portal from planet $v$ to planet $u$.
+2. With a plan of this type you can open a portal from planet $v$ to any planet with index in range $[l, r]$.
+3. With a plan of this type you can open a portal from any planet with index in range $[l, r]$ to planet $v$.
+
+Rick doesn't known where Morty is, but Unity is going to inform him and he wants to be prepared for when he finds and start his journey immediately. So for each planet (including earth itself) he wants to know the minimum amount of money he needs to get from earth to that planet.
+
+## Input
+
+The first line of input contains three integers $n$, $q$ and $s$ ($1 \leq n, q \leq 10^5$, $1 \leq s \leq n$) — number of planets, number of plans and index of earth respectively.
+
+The next $q$ lines contain the plans. Each line starts with a number $t$, type of that plan ($1 \leq t \leq 3$). If $t = 1$ then it is followed by three integers $v$, $u$ and $w$ where $w$ is the cost of that plan ($1 \leq v, u \leq n$, $1 \leq w \leq 10^9$). Otherwise it is followed by four integers $v$, $l$, $r$ and $w$ where $w$ is the cost of that plan ($1 \leq v \leq n$, $1 \leq l \leq r \leq n$, $1 \leq w \leq 10^9$).
+
+## Output
+
+In the first and only line of output print $n$ integers separated by spaces. $i$-th of them should be minimum money to get from earth to $i$-th planet, or $-1$ if it's impossible to get to that planet.
+
+## Examples
+
+**Input**
+```
+3 5 1
+2 3 2 3 17
+2 3 2 2 16
+2 2 2 3 3
+3 3 1 1 12
+1 3 3 17
+```
+
+**Output**
+```
+0 28 12
+```
+
+**Input**
+```
+4 3 1
+3 4 1 3 12
+2 2 3 4 10
+1 2 4 16
+```
+
+**Output**
+```
+0 -1 -1 12
+```
+
+## Note
+
+In the first sample testcase, Rick can purchase $4$th plan once and then $2$nd plan in order to get to get to planet number $2$.
